@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_test/pages/attendance.dart';
 import 'package:ui_test/pages/main_page.dart';
 import 'package:ui_test/pages/profile.dart';
+import 'package:ui_test/pages/register_page.dart';
 import 'package:ui_test/pages/routine.dart';
 
 import 'pages/home_page.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         MyRoute.attendanceRoute: (context) => AttendancePage(),
         MyRoute.routineRoute: (context) => RoutinePage(),
         MyRoute.profileRoute: (context) => ProfilePage(),
+        MyRoute.registerRoute: (context) => RegisterPage(),
       },
     );
   }

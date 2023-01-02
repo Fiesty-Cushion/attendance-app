@@ -23,14 +23,6 @@ class _LoginPageState extends State<LoginPage> {
                 "assets/images/welcome.png",
                 fit: BoxFit.cover,
               ),
-              // Text(
-              //   "Welcome",
-              //   style: TextStyle(
-              //     fontSize: 30.0,
-              //     fontWeight: FontWeight.bold,
-              //     color: Colors.grey[900],
-              //   ),
-              // ),
               Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 20.0),
@@ -62,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                     setState(() {
                       isLoading = true;
                     });
-                    await Future.delayed(Duration(seconds: 5));
+                    await Future.delayed(Duration(seconds: 2));
 
                     setState(() {
                       Navigator.pushNamed(context, MyRoute.mainRoute);
@@ -86,7 +78,21 @@ class _LoginPageState extends State<LoginPage> {
                       shape: StadiumBorder(),
                       minimumSize: Size.fromHeight(60)),
                 ),
-              )
+              ),
+              TextButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.pushNamed(context, MyRoute.registerRoute);
+                    });
+                  },
+                  child: Text(
+                      "Register",
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+              ),
             ],
           ),
         ),
