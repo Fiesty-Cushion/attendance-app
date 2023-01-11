@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_test/pages/attendance.dart';
@@ -13,6 +15,7 @@ import 'utils/screen_routes.dart';
 import 'utils/theme_colors.dart';
 
 void main() {
+  HttpOverrides.global = MyHttpOverrides();
   runApp(MyApp());
 }
 
@@ -46,5 +49,13 @@ class MyApp extends StatelessWidget {
         MyRoute.registerRoute: (context) => RegisterPage(),
       },
     );
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
   }
 }
