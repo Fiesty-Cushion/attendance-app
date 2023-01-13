@@ -118,7 +118,8 @@ class _LoginPageState extends State<LoginPage> {
                             });
                           } else if (loginInfo.errorDescription != null) {
                             ScaffoldMessenger.of(context)
-                                .showSnackBar(buildSnackBar(loginInfo.errorDescription));
+                                .showSnackBar(errorSnackBar(loginInfo.errorDescription));
+                            loggedIn = false;
                           }
 
                           if (loggedIn) {
@@ -152,19 +153,29 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        Navigator.pushNamed(context, MyRoute.registerRoute);
-                      });
-                    },
-                    child: Text(
-                      "Register",
-                      style: TextStyle(
-                        color: Colors.grey[700],
-                        decoration: TextDecoration.underline,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                          "Don't have an account?",
+                        style: TextStyle(color: Colors.grey[700]),
                       ),
-                    ),
+                      TextButton(
+                        onPressed: () {
+                          setState(() {
+                            Navigator.pushNamed(context, MyRoute.registerRoute);
+                          });
+                        },
+                        child: Text(
+                          "Register",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey[800],
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
