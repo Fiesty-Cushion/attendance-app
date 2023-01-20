@@ -1,4 +1,4 @@
-# ui_test
+# Attendr
 
 A new Flutter project.
 
