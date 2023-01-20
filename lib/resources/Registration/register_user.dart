@@ -8,14 +8,14 @@ Future<Register> registerUser(String username, String email, String password, St
 
 
   final Response response = await post(Uri.parse("https://10.0.2.2:5001/account/register"),
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: jsonEncode({
-    "username": username,
-    "email": email,
-    "password": password,
-    "confirmPassword": confirmPassword,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonEncode({
+        "username": username,
+        "email": email,
+        "password": password,
+        "confirmPassword": confirmPassword,
       })
   );
 
