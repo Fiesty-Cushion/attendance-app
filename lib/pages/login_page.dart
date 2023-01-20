@@ -106,6 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                             isLoading = true;
                           });
 
+                          /*
                           var loginInfo = await fetchLogin(
                               usernameController.text.toString(),
                               passwordController.text.toString());
@@ -121,6 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                                 .showSnackBar(errorSnackBar(loginInfo.errorDescription));
                             loggedIn = false;
                           }
+                          */
 
                           if (loggedIn) {
                             setState(() {
@@ -157,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                          "Don't have an account?",
+                        "Don't have an account?",
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       TextButton(
